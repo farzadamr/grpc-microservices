@@ -3,10 +3,13 @@ package main
 import (
 	"log"
 	"net/http"
+
+	common "github.com/farzadamr/grpc-common"
+	_ "github.com/joho/godotenv/autoload"
 )
 
-const (
-	httpAddr = ":8080"
+var (
+	httpAddr = common.EnvString("HTTP_ADDR", ":3000")
 )
 
 func main() {
